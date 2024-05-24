@@ -95,13 +95,13 @@ public class ConnectionController {
 
     @FXML
     void startActionButton1player(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view2player.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view1player.fxml"));
         Parent root = loader.load();
 
 
-        WhoPlayFirstController2player whoPlayFirstController2player = loader.getController();
-        whoPlayFirstController2player.setPlayerOneName("Vous");
-        whoPlayFirstController2player.setPlayerTwoName("Robot");
+        WhoPlayFirstController1player whoPlayFirstController1player = loader.getController();
+        whoPlayFirstController1player.setPlayerOneName("Vous");
+        whoPlayFirstController1player.setPlayerTwoName("Robot");
 
         Stage whoPlayFirstStage = new Stage();
         whoPlayFirstStage.setScene(new Scene(root));

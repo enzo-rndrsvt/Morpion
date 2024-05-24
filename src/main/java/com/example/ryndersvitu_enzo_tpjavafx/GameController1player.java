@@ -15,6 +15,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Random;
 
 public class GameController1player {
     @FXML
@@ -139,10 +140,35 @@ public class GameController1player {
             button.setText(String.valueOf(currentPlayer));
             checkWin();
             switchPlayer();
-            if (gameEnd == false) {whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );}
+            if (gameEnd == false) {
+                whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );
+                robotMove();
+            }
+        }
 
+    }
+
+    private Random random = new Random();
+
+    private void robotMove(){
+        if(gameEnd) return;
+        int row, col;
+        do {
+            row = random.nextInt(3);
+            col = random.nextInt(3);
+        } while (board[row][col] != '-');
+
+        board[row][col] = currentPlayer;
+        String buttonId = "button" + row + '_' + col;
+        Button button = (Button) stage.getScene().lookup("#" + buttonId);
+        button.setText(String.valueOf(currentPlayer));
+        checkWin();
+        switchPlayer();
+        if(gameEnd == false){
+            whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );
         }
     }
+
 
     @FXML
     void restartButton(ActionEvent event) {
@@ -157,9 +183,7 @@ public class GameController1player {
 
 
     @FXML
-    void aboutButton(ActionEvent event) {
-        modalDialog.show();
-    }
+    void aboutButton(ActionEvent event) {}
 
     @FXML
     void leaveButton(ActionEvent event) {
@@ -180,23 +204,19 @@ public class GameController1player {
         rulesStage.show();
     }
 
-    private Stage modalDialog;
-
-    public void setModalDialog(Stage modal) {
-        this.modalDialog = modal;
-    }
-
     private void addWins(){
         restartButtonId.setVisible(true);
         if(Objects.equals(whoPlayFirst, "X")){
             if(currentPlayer == 'X'){
                 playerOneWins++;
+                switchPlayer();
             } else {
                 playerTwoWins++;
             }
         } else {
             if(currentPlayer == 'X'){
                 playerTwoWins++;
+                switchPlayer();
             } else {
                 playerOneWins++;
             }

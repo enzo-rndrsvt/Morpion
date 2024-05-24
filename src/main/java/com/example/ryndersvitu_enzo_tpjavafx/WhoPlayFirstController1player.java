@@ -38,35 +38,35 @@ public class WhoPlayFirstController1player {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("game-view1player.fxml"));
         Parent root = loader.load();
 
-        GameController2player gameController2player = loader.getController();
+        GameController1player gameController1player = loader.getController();
 
         if(event.getSource() == startButtonPlayerOne){
-            gameController2player.setPlayerOneName(playerOneName);
-            gameController2player.setPlayerTwoName(playerTwoName);
-            gameController2player.setCurrentPlayer('X');
-            gameController2player.setWhoPlayFirst("X");
-            gameController2player.setCurrentPlayerName(playerOneName);
+            gameController1player.setPlayerOneName(playerOneName);
+            gameController1player.setPlayerTwoName(playerTwoName);
+            gameController1player.setCurrentPlayer('X');
+            gameController1player.setWhoPlayFirst("X");
+            gameController1player.setCurrentPlayerName(playerOneName);
         } if(event.getSource() == startButtonPlayerTwo) {
-            gameController2player.setPlayerOneName(playerTwoName);
-            gameController2player.setPlayerTwoName(playerOneName);
-            gameController2player.setCurrentPlayer('O');
-            gameController2player.setWhoPlayFirst("O");
-            gameController2player.setCurrentPlayerName(playerTwoName);
+            gameController1player.setPlayerOneName(playerTwoName);
+            gameController1player.setPlayerTwoName(playerOneName);
+            gameController1player.setCurrentPlayer('O');
+            gameController1player.setWhoPlayFirst("O");
+            gameController1player.setCurrentPlayerName(playerTwoName);
         } else {
             Random random = new Random();
             int randomInt = random.nextInt(2);
             if (randomInt == 0) {
-                gameController2player.setPlayerOneName(playerOneName);
-                gameController2player.setPlayerTwoName(playerTwoName);
-                gameController2player.setCurrentPlayer('X');
-                gameController2player.setWhoPlayFirst("X");
-                gameController2player.setCurrentPlayerName(playerOneName);
+                gameController1player.setPlayerOneName(playerOneName);
+                gameController1player.setPlayerTwoName(playerTwoName);
+                gameController1player.setCurrentPlayer('X');
+                gameController1player.setWhoPlayFirst("X");
+                gameController1player.setCurrentPlayerName(playerOneName);
             } else {
-                gameController2player.setPlayerOneName(playerTwoName);
-                gameController2player.setPlayerTwoName(playerOneName);
-                gameController2player.setCurrentPlayer('O');
-                gameController2player.setWhoPlayFirst("O");
-                gameController2player.setCurrentPlayerName(playerTwoName);
+                gameController1player.setPlayerOneName(playerTwoName);
+                gameController1player.setPlayerTwoName(playerOneName);
+                gameController1player.setCurrentPlayer('O');
+                gameController1player.setWhoPlayFirst("O");
+                gameController1player.setCurrentPlayerName(playerTwoName);
             }
         }
 
@@ -78,6 +78,7 @@ public class WhoPlayFirstController1player {
         gameStage.setTitle("Tic - Tac - Toe");
         gameStage.initStyle(StageStyle.UNDECORATED);
         gameStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/morpion.png"))));
+        gameController1player.setStage(gameStage);
         gameStage.show();
 
         ((Stage) startButtonPlayerOne.getScene().getWindow()).close();

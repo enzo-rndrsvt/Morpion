@@ -139,15 +139,16 @@ public class GameController2player {
             button.setText(String.valueOf(currentPlayer));
             checkWin();
             switchPlayer();
-            if (gameEnd == false) {whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );}
-
+            if (gameEnd == false) {
+                whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );
+            }
         }
     }
 
     @FXML
     void restartButton(ActionEvent event) {
         initiateBoard();
-        switchPlayer();
+        //switchPlayer();
         gameEnd = false;
         resetWinButtons(0, 1, 2, 3, 4, 5, 6, 7, 8);
         whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );
@@ -157,9 +158,7 @@ public class GameController2player {
 
 
     @FXML
-    void aboutButton(ActionEvent event) {
-        modalDialog.show();
-    }
+    void aboutButton(ActionEvent event) {}
 
     @FXML
     void leaveButton(ActionEvent event) {
@@ -180,11 +179,6 @@ public class GameController2player {
         rulesStage.show();
     }
 
-    private Stage modalDialog;
-
-    public void setModalDialog(Stage modal) {
-        this.modalDialog = modal;
-    }
 
     private void addWins(){
         restartButtonId.setVisible(true);
