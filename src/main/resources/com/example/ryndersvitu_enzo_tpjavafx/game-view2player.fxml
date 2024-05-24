@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="806.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.GameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="806.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.GameController1player">
    <children>
       <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="52.0" layoutY="157.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-width: 1px;">
         <columnConstraints>
@@ -157,7 +157,7 @@
             </Label>
          </children>
       </VBox>
-      <Button fx:id="restartButtonId" layoutX="93.0" layoutY="427.0" mnemonicParsing="false" onAction="#restartButton" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Rejouer !" textFill="#0077b6">
+      <Button fx:id="restartButtonId" layoutX="93.0" layoutY="427.0" mnemonicParsing="false" onAction="#restartButton" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Rejouer !" textFill="#0077b6" visible="false">
          <font>
             <Font name="Yu Gothic UI Light" size="24.0" />
          </font>

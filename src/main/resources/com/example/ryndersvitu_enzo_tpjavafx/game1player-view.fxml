@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="806.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.GameController2player">
+   <children>
+      <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="52.0" layoutY="157.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-width: 1px;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="button0_0" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button1_0" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button2_0" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button0_1" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button1_1" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button2_1" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button0_2" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button1_2" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+            <Button fx:id="button2_2" mnemonicParsing="false" onAction="#gameButtonAction" prefHeight="84.0" prefWidth="83.0" style="-fx-background-color: none;" text="" textFill="#03045e" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Yu Gothic Medium" size="39.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#90e0ef" height="71.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="806.0" />
+      <Text fill="#0077b6" layoutX="258.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jeu du Morpion" wrappingWidth="292.0">
+         <font>
+            <Font name="Yu Gothic Light" size="43.0" />
+         </font>
+      </Text>
+      <Label fx:id="whoToPlayLabel" layoutX="52.0" layoutY="119.0" prefHeight="27.0" prefWidth="250.0" text="Au tour de : " textFill="#0077b6">
+         <font>
+            <Font name="Yu Gothic UI Light" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="258.0" layoutX="550.0" layoutY="150.0" stroke="#03045e" strokeType="INSIDE" width="200.0" />
+      <Text fill="#03045e" layoutX="595.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement">
+         <font>
+            <Font name="Yu Gothic UI Light" size="23.0" />
+         </font>
+      </Text>
+      <MenuBar prefHeight="25.0" prefWidth="806.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#restartButton" text="Réinitialiser le jeu" />
+                  <MenuItem mnemonicParsing="false" onAction="#leaveButton" text="Quitter le jeu" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutButton" text="A propos" />
+                  <MenuItem mnemonicParsing="false" onAction="#rulesButton" text="Règles" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox layoutX="550.0" layoutY="154.0" prefHeight="250.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="rank1Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank2Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank3Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank4Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank5Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank6Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank7Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank8Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="rank9Label" prefHeight="27.0" prefWidth="200.0" textFill="#0077b6">
+               <font>
+                  <Font name="Yu Gothic UI Light" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button fx:id="restartButtonId" layoutX="93.0" layoutY="427.0" mnemonicParsing="false" onAction="#restartButton" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Rejouer !" textFill="#0077b6" visible="false">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

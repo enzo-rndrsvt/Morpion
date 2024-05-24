@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
-public class WhoPlayFirstController {
+public class WhoPlayFirstController1player {
 
     @FXML
     private Button startButtonPlayerOne;
@@ -30,43 +30,43 @@ public class WhoPlayFirstController {
     private String playerOneName;
     private String playerTwoName;
 
-    public WhoPlayFirstController(){
+    public WhoPlayFirstController1player(){
     }
 
     @FXML
     void startActionButton(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("game-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("game-view1player.fxml"));
         Parent root = loader.load();
 
-        GameController gameController = loader.getController();
+        GameController2player gameController2player = loader.getController();
 
         if(event.getSource() == startButtonPlayerOne){
-            gameController.setPlayerOneName(playerOneName);
-            gameController.setPlayerTwoName(playerTwoName);
-            gameController.setCurrentPlayer('X');
-            gameController.setWhoPlayFirst("X");
-            gameController.setCurrentPlayerName(playerOneName);
+            gameController2player.setPlayerOneName(playerOneName);
+            gameController2player.setPlayerTwoName(playerTwoName);
+            gameController2player.setCurrentPlayer('X');
+            gameController2player.setWhoPlayFirst("X");
+            gameController2player.setCurrentPlayerName(playerOneName);
         } if(event.getSource() == startButtonPlayerTwo) {
-            gameController.setPlayerOneName(playerTwoName);
-            gameController.setPlayerTwoName(playerOneName);
-            gameController.setCurrentPlayer('O');
-            gameController.setWhoPlayFirst("O");
-            gameController.setCurrentPlayerName(playerTwoName);
+            gameController2player.setPlayerOneName(playerTwoName);
+            gameController2player.setPlayerTwoName(playerOneName);
+            gameController2player.setCurrentPlayer('O');
+            gameController2player.setWhoPlayFirst("O");
+            gameController2player.setCurrentPlayerName(playerTwoName);
         } else {
             Random random = new Random();
             int randomInt = random.nextInt(2);
             if (randomInt == 0) {
-                gameController.setPlayerOneName(playerOneName);
-                gameController.setPlayerTwoName(playerTwoName);
-                gameController.setCurrentPlayer('X');
-                gameController.setWhoPlayFirst("X");
-                gameController.setCurrentPlayerName(playerOneName);
+                gameController2player.setPlayerOneName(playerOneName);
+                gameController2player.setPlayerTwoName(playerTwoName);
+                gameController2player.setCurrentPlayer('X');
+                gameController2player.setWhoPlayFirst("X");
+                gameController2player.setCurrentPlayerName(playerOneName);
             } else {
-                gameController.setPlayerOneName(playerTwoName);
-                gameController.setPlayerTwoName(playerOneName);
-                gameController.setCurrentPlayer('O');
-                gameController.setWhoPlayFirst("O");
-                gameController.setCurrentPlayerName(playerTwoName);
+                gameController2player.setPlayerOneName(playerTwoName);
+                gameController2player.setPlayerTwoName(playerOneName);
+                gameController2player.setCurrentPlayer('O');
+                gameController2player.setWhoPlayFirst("O");
+                gameController2player.setCurrentPlayerName(playerTwoName);
             }
         }
 

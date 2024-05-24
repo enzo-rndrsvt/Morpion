@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,7 +16,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.util.Objects;
 
-public class GameController {
+public class GameController1player {
     @FXML
     private Button button0_0;
 
@@ -52,29 +51,8 @@ public class GameController {
     private Label rank2Label;
 
     @FXML
-    private Label rank3Label;
+    private Button restartButtonId;
 
-    @FXML
-    private Label rank4Label;
-
-    @FXML
-    private Label rank5Label;
-
-    @FXML
-    private Label rank6Label;
-
-    @FXML
-    private Label rank7Label;
-
-    @FXML
-    private Label rank8Label;
-
-    @FXML
-    private Label rank9Label;
-
-
-    @FXML
-    private GridPane gridPane;
 
     @FXML
     private Label whoToPlayLabel;
@@ -93,10 +71,11 @@ public class GameController {
     private int playerTwoWins = 0;
     private String whoPlayFirst;
 
-    public GameController(){
+    public GameController1player(){
         board = new char[3][3];
         gameEnd = false;
         initiateBoard();
+
     }
 
     private Button getButtonByIndex(int index){
@@ -172,6 +151,7 @@ public class GameController {
         gameEnd = false;
         resetWinButtons(0, 1, 2, 3, 4, 5, 6, 7, 8);
         whoToPlayLabel.setText("Au tour de : (" + currentPlayer + ") - " + currentPlayerName );
+        restartButtonId.setVisible(false);
 
     }
 
@@ -207,8 +187,8 @@ public class GameController {
     }
 
     private void addWins(){
-
-        if(whoPlayFirst == "X"){
+        restartButtonId.setVisible(true);
+        if(Objects.equals(whoPlayFirst, "X")){
             if(currentPlayer == 'X'){
                 playerOneWins++;
             } else {
@@ -280,6 +260,7 @@ public class GameController {
         if(full){
             gameEnd = true;
             whoToPlayLabel.setText("Match nul !");
+            restartButtonId.setVisible(true);
         }
     }
 

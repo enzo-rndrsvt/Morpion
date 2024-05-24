@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="806.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.ConnectionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="806.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.ConnectionController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#90e0ef" height="71.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="806.0" />
       <Text fill="#0077b6" layoutX="258.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jeu du Morpion" wrappingWidth="292.0">
@@ -25,7 +25,7 @@
          <font>
             <Font name="Yu Gothic Light" size="18.0" />
          </font></Text>
-      <Button fx:id="startButton" layoutX="59.0" layoutY="344.0" mnemonicParsing="false" onAction="#startActionButton" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Jouer !" textFill="#0077b6">
+      <Button layoutX="59.0" layoutY="344.0" mnemonicParsing="false" onAction="#startActionButton2player" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Jouer !" textFill="#0077b6">
          <font>
             <Font name="Yu Gothic UI Light" size="24.0" />
          </font></Button>
@@ -39,12 +39,6 @@
             <Font name="Yu Gothic Light" size="22.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="258.0" layoutX="563.0" layoutY="205.0" stroke="#03045e" strokeType="INSIDE" width="200.0" />
-      <Text fill="#03045e" layoutX="608.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classement">
-         <font>
-            <Font name="Yu Gothic UI Light" size="23.0" />
-         </font>
-      </Text>
       <MenuBar prefHeight="25.0" prefWidth="806.0">
          <menus>
             <Menu mnemonicParsing="false" text="Options">
@@ -60,5 +54,15 @@
             </Menu>
          </menus>
       </MenuBar>
+      <Button layoutX="550.0" layoutY="344.0" mnemonicParsing="false" onAction="#startActionButton1player" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Jouer !" textFill="#0077b6">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+      <Text fill="#0077b6" layoutX="550.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mode 1 joueur" wrappingWidth="149.0">
+         <font>
+            <Font name="Yu Gothic Light" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

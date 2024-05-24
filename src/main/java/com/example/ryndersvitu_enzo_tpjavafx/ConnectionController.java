@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -35,11 +34,6 @@ public class ConnectionController {
     private String playerOneName;
     private String playerTwoName;
 
-
-
-    @FXML
-    private Button startButton;
-
     @FXML
     void aboutButton(ActionEvent event) {
 
@@ -65,7 +59,7 @@ public class ConnectionController {
     }
 
     @FXML
-    void startActionButton(ActionEvent event) throws IOException {
+    void startActionButton2player(ActionEvent event) throws IOException {
 
         playerOneName = playerOneNameField.getText();
         playerTwoName = playerTwoNameField.getText();
@@ -80,13 +74,13 @@ public class ConnectionController {
                 }
             }, 1000);
         } else {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view2player.fxml"));
             Parent root = loader.load();
 
 
-            WhoPlayFirstController whoPlayFirstController = loader.getController();
-            whoPlayFirstController.setPlayerOneName(playerOneName);
-            whoPlayFirstController.setPlayerTwoName(playerTwoName);
+            WhoPlayFirstController2player whoPlayFirstController2player = loader.getController();
+            whoPlayFirstController2player.setPlayerOneName(playerOneName);
+            whoPlayFirstController2player.setPlayerTwoName(playerTwoName);
 
             Stage whoPlayFirstStage = new Stage();
             whoPlayFirstStage.setScene(new Scene(root));
@@ -97,6 +91,27 @@ public class ConnectionController {
             whoPlayFirstStage.show();
         }
     }
+
+
+    @FXML
+    void startActionButton1player(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view2player.fxml"));
+        Parent root = loader.load();
+
+
+        WhoPlayFirstController2player whoPlayFirstController2player = loader.getController();
+        whoPlayFirstController2player.setPlayerOneName("Vous");
+        whoPlayFirstController2player.setPlayerTwoName("Robot");
+
+        Stage whoPlayFirstStage = new Stage();
+        whoPlayFirstStage.setScene(new Scene(root));
+        whoPlayFirstStage.setResizable(false);
+        whoPlayFirstStage.initStyle(StageStyle.UNDECORATED);
+        whoPlayFirstStage.setTitle("Tic - Tac - Toe");
+        whoPlayFirstStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/morpion.png"))));
+        whoPlayFirstStage.show();
+    }
+
 
     public String getPlayerOneName(){
         return playerOneName;
