@@ -209,14 +209,12 @@ public class GameController1player {
         if(Objects.equals(whoPlayFirst, "X")){
             if(currentPlayer == 'X'){
                 playerOneWins++;
-                switchPlayer();
             } else {
                 playerTwoWins++;
             }
         } else {
             if(currentPlayer == 'X'){
                 playerTwoWins++;
-                switchPlayer();
             } else {
                 playerOneWins++;
             }
