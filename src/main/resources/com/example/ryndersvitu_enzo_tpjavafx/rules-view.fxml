@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="413.0" prefWidth="683.0" style="-fx-background-color: CAF0F8;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.RulesController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#90e0ef" height="71.0" layoutY="43.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="723.0" />
+      <Text fill="#0077b6" layoutX="298.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Règles" wrappingWidth="128.0">
+         <font>
+            <Font name="Yu Gothic Light" size="43.0" />
+         </font>
+      </Text>
+      <Button layoutX="254.0" layoutY="320.0" mnemonicParsing="false" onAction="#leaveActionButton" prefHeight="47.0" prefWidth="168.0" style="-fx-background-color: #90E0EF;" text="Quitter" textFill="#0077b6">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+      <Text fill="#0077b6" layoutX="40.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.  Pour commencer le jeu se joue sur une grille de 3x3" wrappingWidth="596.548828125">
+         <font>
+            <Font name="Yu Gothic UI Light" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#0077b6" layoutX="40.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2.  Chaque joueur pose un pion à tour de rôle sur le plateau" wrappingWidth="642.548828125">
+         <font>
+            <Font name="Yu Gothic UI Light" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#0077b6" layoutX="40.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3.  Le gagnant est celui qui parvient à aligner 3 symboles identiques horizontalement, verticalement ou en diagonale" wrappingWidth="642.548828125">
+         <font>
+            <Font name="Yu Gothic UI Light" size="25.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

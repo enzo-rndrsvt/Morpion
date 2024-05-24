@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="273.0" prefWidth="451.0" style="-fx-background-color: #90E0EF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ryndersvitu_enzo_tpjavafx.WhoPlayFirstController">
+   <children>
+      <Button fx:id="startButtonPlayerOne" layoutX="52.0" layoutY="99.0" mnemonicParsing="false" onAction="#startActionButton" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: #00B4D8;" textFill="#03045e">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+      <Text fill="#03045e" layoutX="53.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qui joue en premier ?">
+         <font>
+            <Font name="Yu Gothic UI Light" size="38.0" />
+         </font>
+      </Text>
+      <Button fx:id="startButtonPlayerTwo" layoutX="269.0" layoutY="99.0" mnemonicParsing="false" onAction="#startActionButton" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: #00B4D8;" textFill="#03045e">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="startButtonPlayerRandom" layoutX="161.0" layoutY="187.0" mnemonicParsing="false" onAction="#startActionButton" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: #00B4D8;" text="Aléatoire" textFill="#03045e">
+         <font>
+            <Font name="Yu Gothic UI Light" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
