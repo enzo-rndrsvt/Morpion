@@ -1,5 +1,6 @@
 package com.example.ryndersvitu_enzo_tpjavafx;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,16 +37,19 @@ public class ConnectionController {
 
     @FXML
     void aboutButton(ActionEvent event) {
-
+        // Fonctionnalité du bouton "À propos" (à implémenter)
+        return;
     }
 
     @FXML
     void leaveButton(ActionEvent event) {
-        ((Stage) stage.getScene().getWindow()).close();
+        // Quitter l'application depuis la barre de menu
+        Platform.exit();
     }
 
     @FXML
     void rulesButton(ActionEvent event) throws IOException {
+        // Afficher la fenêtre des règles
         FXMLLoader loader = new FXMLLoader(getClass().getResource("rules-view.fxml"));
         Parent root = loader.load();
 
@@ -60,24 +64,32 @@ public class ConnectionController {
 
     @FXML
     void startActionButton2player(ActionEvent event) throws IOException {
+        // Démarrer le jeu pour 2 joueurs
 
+        // On récupère les noms des joueurs
         playerOneName = playerOneNameField.getText();
         playerTwoName = playerTwoNameField.getText();
 
-        if (Objects.equals(playerOneName, "") || Objects.equals(playerTwoName, "")) {
+        // Vérifier si les noms des joueurs sont vides
+        if (playerOneName.isEmpty() || playerTwoName.isEmpty()) {
+
+            // Si c'est vide on met le message en rouge pour alerter
             beforeStartLabel.setTextFill(Color.RED);
+
+            // On restaure la couleur après 1 seconde
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    beforeStartLabel.setTextFill(Paint.valueOf("#0077B6"));
+                    Platform.runLater(() -> beforeStartLabel.setTextFill(Paint.valueOf("#0077B6")));
                 }
             }, 1000);
         } else {
+            // Si tout est bon alors on charge la vue pour le jeu à 2 joueurs
             FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view2player.fxml"));
             Parent root = loader.load();
 
-
+            // On envoie les noms des joueurs à la vue suivante
             WhoPlayFirstController2player whoPlayFirstController2player = loader.getController();
             whoPlayFirstController2player.setPlayerOneName(playerOneName);
             whoPlayFirstController2player.setPlayerTwoName(playerTwoName);
@@ -92,19 +104,17 @@ public class ConnectionController {
         }
     }
 
-
     @FXML
     void startActionButton1player(ActionEvent event) throws IOException {
+        // Démarrer le jeu pour 1 joueur
         FXMLLoader loader = new FXMLLoader(getClass().getResource("game-view1player.fxml"));
         Parent root = loader.load();
-
 
         GameController1player gameController1player = loader.getController();
         gameController1player.setCurrentPlayer('X');
         gameController1player.setCurrentPlayerName("Vous");
 
-
-
+        // On charge la vue du jeu et on l'ouvre
         Stage gameStage = new Stage();
         gameStage.setScene(new Scene(root));
         gameStage.setResizable(false);
@@ -114,21 +124,15 @@ public class ConnectionController {
         gameController1player.setStage(gameStage);
         gameStage.show();
 
+        // On ferme la page de connection
         stage.close();
     }
 
-
-    public String getPlayerOneName(){
-        return playerOneName;
+    public void setStage(Stage stage) {
+        ConnectionController.stage = stage;
     }
 
-    public String getPlayerTwoName(){
-        return  playerTwoName;
-    }
-    public void setStage(Stage stage){
-        this.stage = stage;
-    }
-    public static Stage getStage(){
+    public static Stage getStage() {
         return stage;
     }
 }

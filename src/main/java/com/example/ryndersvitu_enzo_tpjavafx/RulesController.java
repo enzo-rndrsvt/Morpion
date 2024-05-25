@@ -9,6 +9,7 @@ public class RulesController {
 
     @FXML
     void leaveActionButton(ActionEvent event) {
+        // Bouton pour quitter la fenêtre des règles
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
