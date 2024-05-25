@@ -95,21 +95,26 @@ public class ConnectionController {
 
     @FXML
     void startActionButton1player(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("whoplay-view1player.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("game-view1player.fxml"));
         Parent root = loader.load();
 
 
-        WhoPlayFirstController1player whoPlayFirstController1player = loader.getController();
-        whoPlayFirstController1player.setPlayerOneName("Vous");
-        whoPlayFirstController1player.setPlayerTwoName("Robot");
+        GameController1player gameController1player = loader.getController();
+        gameController1player.setCurrentPlayer('X');
+        gameController1player.setCurrentPlayerName("Vous");
 
-        Stage whoPlayFirstStage = new Stage();
-        whoPlayFirstStage.setScene(new Scene(root));
-        whoPlayFirstStage.setResizable(false);
-        whoPlayFirstStage.initStyle(StageStyle.UNDECORATED);
-        whoPlayFirstStage.setTitle("Tic - Tac - Toe");
-        whoPlayFirstStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/morpion.png"))));
-        whoPlayFirstStage.show();
+
+
+        Stage gameStage = new Stage();
+        gameStage.setScene(new Scene(root));
+        gameStage.setResizable(false);
+        gameStage.setTitle("Tic - Tac - Toe");
+        gameStage.initStyle(StageStyle.UNDECORATED);
+        gameStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/morpion.png"))));
+        gameController1player.setStage(gameStage);
+        gameStage.show();
+
+        stage.close();
     }
 
 
